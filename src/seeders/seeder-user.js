@@ -15,6 +15,7 @@ module.exports = {
       health_condition: 'normal',
       email: 'john@gmail.com',
       phone: '123456',
+      image: '1234',
       family_ID: 1,
       role: 'Doc',
       createdAt: new Date(),

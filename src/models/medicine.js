@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
         manufacturer_name: DataTypes.STRING,
         usage_instruction: DataTypes.TEXT,
         prescribed: DataTypes.BOOLEAN,
-        function: DataTypes.TEXT
+        function: DataTypes.TEXT,
+        image: DataTypes.STRING
 
 
     }, {

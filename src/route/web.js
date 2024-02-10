@@ -4,7 +4,8 @@ let router = express.Router();
 
 const initWebRoute = (app) => {
     router.get('/', homeController.getHomepage);
+    router.get('/crud', homeController.getCRUD);
     return app.use('/', router)
 }
 
-export default  initWebRoute;
+module.exports = initWebRoute;

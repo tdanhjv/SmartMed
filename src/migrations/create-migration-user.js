@@ -14,6 +14,7 @@ module.exports = {
       // health_condition: DataTypes.TEXT,
       // email: DataTypes.STRING,
       // phone: DataTypes.STRING,
+      // image: DataTypes.STRING,
       // family_ID: DataTypes.STRING,
       // role: DataTypes.STRING
       id: {
@@ -56,6 +57,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       phone: {
+        type: Sequelize.STRING
+      },
+      image: {
         type: Sequelize.STRING
       },
       family_ID: {

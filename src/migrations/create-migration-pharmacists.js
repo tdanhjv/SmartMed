@@ -1,11 +1,11 @@
 'use strict';
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('Doctors', {
-            // doctor_ID: DataTypes.INTEGER,
+        await queryInterface.createTable('Pharmacists', {
+            // pharmacist_ID: DataTypes.INTEGER,
             // user_ID: DataTypes.INTEGER,
-            // specialty: DataTypes.STRING,
             // position: DataTypes.STRING,
+            // image: DataTypes.STRING
 
             id: {
                 allowNull: false,
@@ -15,9 +15,6 @@ module.exports = {
             },
             user_ID: {
                 type: Sequelize.INTEGER
-            },
-            specialty: {
-                type: Sequelize.STRING
             },
             position: {
                 type: Sequelize.STRING
@@ -36,6 +33,6 @@ module.exports = {
         });
     },
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable('Doctors');
+        await queryInterface.dropTable('Pharmacists');
     }
 };
