@@ -39,7 +39,7 @@ let handleUserLogin = (username, password) => {
             } else {
                 //return error
                 userData.errCode = 1;
-                userData.errMessage = `Your's username isn't exist in our system. Pls try other email!`
+                userData.errMessage = `Your's username isn't exist in our system. Pls try other username!`
 
             }
             resolve(userData)
@@ -66,6 +66,34 @@ let checkUserUsername = (userUsername) => {
         }
     })
 }
+
+let getAllUsers = (userId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let users = '';
+            if (userId === 'ALL') {
+                users = await db.User.findAll({
+                    attributes: {
+                        exclude: ['password']
+                    }
+                })
+            }
+
+            if (userId && userId !== 'ALL') {
+                users = await db.User.findOne({
+                    where: { id: userId },
+                    attributes: {
+                        exclude: ['password']
+                    }
+                })
+            }
+            resolve(users)
+        } catch (e) {
+            reject(e);
+        }
+    })
+}
 module.exports = {
-    handleUserLogin: handleUserLogin
+    handleUserLogin: handleUserLogin,
+    getAllUsers: getAllUsers
 }
